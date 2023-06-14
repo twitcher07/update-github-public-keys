@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [ "$1" ]; then
 
   KNOWN_HOSTS_FILE=$1
@@ -19,9 +18,6 @@ if [ "$1" ]; then
 
       # Then we update the new ones
       curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> $KNOWN_HOSTS_FILE
-
-      # Then we hash the hostnames
-      ssh-keygen -Hf $KNOWN_HOSTS_FILE
   
     fi
   
@@ -32,9 +28,6 @@ else
 
   # Then we update the new ones
   curl -L https://api.github.com/meta | jq -r '.ssh_keys | .[]' | sed -e 's/^/github.com /' >> ~/.ssh/known_hosts
-
-  # Then we hash the hostnames
-  ssh-keygen -Hf ~/.ssh/known_hosts
 
 fi
 
