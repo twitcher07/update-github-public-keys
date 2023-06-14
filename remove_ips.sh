@@ -6,7 +6,14 @@ if [ "$1" ]; then
 
 else
 
-    KNOWN_HOSTS_FILE="~/.ssh/known_hosts"
+    KNOWN_HOSTS_FILE=~/.ssh/known_hosts
+
+fi
+
+if [ ! -f "$KNOWN_HOSTS_FILE" ]; then
+
+  echo "Can't find known_host file: $1 does not exist."
+  exit 1
 
 fi
 
