@@ -17,8 +17,8 @@ if [ ! -f "$KNOWN_HOSTS_FILE" ]; then
 
 fi
 
-for ip in $(for i in $(seq -f "140.82.%g.%%g" 112 127); do seq -f $i 1 254; done); do ssh-keygen -R $ip -f $KNOWN_HOSTS_FILE; done
+for ip in $(for i in $(seq -f "140.82.%g.%%g" 112 127); do seq -f $i 1 255; done); do ssh-keygen -R $ip -f $KNOWN_HOSTS_FILE; done
 
 echo -e "\n----------------------------"
-echo "Finished reemoving github IP address keys."
+echo "Finished removing github IP address keys for 140.82.112.0/20."
 echo -e "----------------------------"
