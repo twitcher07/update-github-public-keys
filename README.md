@@ -12,7 +12,7 @@ curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-key
 For current user:
 
 ```
-curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/update_keys.sh
+curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/update_keys.sh | bash
 ```
 or pass a path to the known_hosts file that you want to edit (for when using user with sudo privileges)
 ```
