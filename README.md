@@ -1,17 +1,20 @@
-### How to use:
+# How to use:
 
-Update known_hosts for current user:
-
+## Step 1: Remove github IP addresses
 ```
-curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/remove_ips.sh | bash 
-or
-curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/update_keys.sh | bash 
+curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/remove_ips.sh | bash
 ```
-
-or update known_hosts for different user (when using root):
-
+or pass a path to the known_hosts file that you want to edit (for when using user with sudo privileges)
 ```
 curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/remove_ips.sh | bash -s -- [path/to/user]/.ssh/known_hosts
-or
+```
+## Step 2: Add github.com public keys
+For current user:
+
+```
+curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/update_keys.sh
+```
+or pass a path to the known_hosts file that you want to edit (for when using user with sudo privileges)
+```
 curl -fsSL https://raw.githubusercontent.com/twitcher07/update-github-public-keys/main/update_keys.sh | bash -s -- [path/to/user]/.ssh/known_hosts
 ```
